@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "ESNEXT",
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitReturns": true,
+  },
+  "files": [
+    "index.ts",
+    "stringFormatter.ts",
+  ]
+}
