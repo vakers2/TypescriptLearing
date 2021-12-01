@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "module": "ESNEXT",
+    "target": "ES5",
+    "module": "ESNext",
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "noImplicitReturns": true,
+    "outDir": "src/modules-compiled/"
   },
-  "files": [
-    "index.ts",
-    "stringFormatter.ts",
-  ]
+  "include": ["src/modules/*"]
 }
