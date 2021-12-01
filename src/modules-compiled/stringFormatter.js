@@ -10,7 +10,7 @@ function parseFormatType(value) {
     if (StringRowFormattingType[numValue]) {
         return numValue;
     }
-    return;
+    return StringRowFormattingType.WrapByWord;
 }
 function formatString(string, maxRowLength, maxRowCount, rowFormattingType) {
     if (!maxRowLength) {

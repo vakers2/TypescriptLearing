@@ -5,13 +5,13 @@ enum StringRowFormattingType {
     NoWrap
 }
 
-function parseFormatType(value: string): StringRowFormattingType | undefined {
+function parseFormatType(value: unknown): StringRowFormattingType {
     const numValue = Number(value);
     if (StringRowFormattingType[numValue]) {
         return numValue as StringRowFormattingType;
     } 
 
-    return;
+    return StringRowFormattingType.WrapByWord;
 }
 
 function formatString(
