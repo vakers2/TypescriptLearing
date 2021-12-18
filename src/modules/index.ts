@@ -7,5 +7,3 @@ const formattedStringInput = document.getElementById('formattedString') as HTMLT
 stringInput.addEventListener('change', () => {
   formattedStringInput.value = formatString(stringInput.value, 10, 3, parseFormatType(rowFormattingType.value));
 })
-
-
