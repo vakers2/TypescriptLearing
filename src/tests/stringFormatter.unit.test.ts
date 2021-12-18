@@ -1,4 +1,4 @@
-import FormatString, { StringRowFormattingType } from '../modules/stringFormatter';
+import FormatString, { joinRows, parseFormatType, StringRowFormattingType } from '../modules/stringFormatter';
 import { suite, test } from '@testdeck/mocha';
 import { expect } from 'chai';
 
@@ -11,6 +11,16 @@ import { expect } from 'chai';
         this.text = 'Hello world! It\'s unit testing.';
         this.maxRowLength = 14;
         this.maxRowCount = 2;
+    }
+
+    @test 'Parse format type should return enum with correct value' () {
+        expect(parseFormatType('0')).
+            to.be.equal(StringRowFormattingType.WrapByWord);
+    }
+
+    @test 'Parse format type should return default enum with incorrect value' () {
+        expect(parseFormatType('5')).
+        to.be.equal(StringRowFormattingType.WrapByWord);
     }
 
     @test 'Format with no max row length' () {
@@ -41,5 +51,10 @@ import { expect } from 'chai';
     @test 'Format by sentence' () {
         expect(FormatString(this.text, this.maxRowLength, this.maxRowCount, StringRowFormattingType.WrapBySentence)).
             to.be.equal('Hello world!');
+    }
+
+    @test 'JoinRows should join array with new line delimiter' () {
+        expect(joinRows(['Unit', 'testing'])).
+        to.be.equal('Unit\ntesting');
     }
 }

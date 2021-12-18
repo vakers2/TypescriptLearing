@@ -158,4 +158,4 @@ function joinRows(rows: string[]): string {
 }
 
 export default formatString;
-export { StringRowFormattingType, parseFormatType };
+export { StringRowFormattingType, parseFormatType, joinRows };
